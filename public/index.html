@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta property="fb:app_id" content="771772920308599">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CaptainSafu">
+  <meta property="og:description" content="CaptainSafu is an open aggregator platform for DeFI Insurance">
+  <meta property="og:url" content="https://captainsafu.io/">
+  <meta property="og:image" content="safu_logo.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="1000">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Captainsafu">
+  <meta property="twitter:description" content="CaptainSafu is an open aggregator platform for DeFI Insurance">
+  <meta property="twitter:image:src" content="https://captainsafu.io/captainsafuork.png">
+  <meta property="twitter:image:width" content="1000">
+  <meta property="twitter:image:height" content="1000">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <script>
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      //window.location.href = "https://h5.nsure.network/";
+    }
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

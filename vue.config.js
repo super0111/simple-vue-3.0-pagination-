@@ -1,5 +1,12 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
-  devServer: {
-    port: 8081
-  }
+    outputDir: 'dist/' + process.env.outputDir,
+    configureWebpack: config => {
+        config.plugins.push(
+            new CopyWebpackPlugin([{ from: 'src/assets/files', to: './' }]),
+        )
+    },
+    publicPath: process.env.NODE_ENV === 'production'
+        ? './'
+        : './'
 }

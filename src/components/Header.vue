@@ -1,0 +1,161 @@
+<template>
+    <div class="header home">
+        <div class="pages-wrapper header-wrapper">
+            <div class="logon-wrapper" @click="home">
+                <img src="@/assets/images/safu_logo-modified.png" width="40" alt="">
+                <span>CaptainSafu</span>
+            </div>
+            <div class="right-wrapper">
+                <div class="right-list">
+                    <div class="right-list-item">
+                        <a href="#" target="_blank" rel="">Whitepaper</a>
+                    </div>
+                    <div class="right-list-item">
+                        <a href="https://docs.captainsafu.io" target="_blank" rel="">Docs</a>
+                    </div>
+
+                    <div class="right-list-item">
+                      <a href="https://github.com/captainsafu"  target="_blank" rel="">GitHub</a>
+                    </div>
+                    <div class="right-list-item">
+                      <el-button class="wallet-btn">Connect Wallet</el-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+
+    export default {
+        comments:{
+        },
+        data() {
+            return {
+                menuList: [{
+                    path: '/home',
+                    name: 'Home'
+                },{
+                    path: '/insure',
+                    name: 'Insure'
+                },{
+                    path: '/liquidity-mining',
+                    name: 'Liquidity Mining'
+                },{
+                    path: '/stake-pool',
+                    name: 'Stake Pool'
+                }]
+            }
+        },
+        methods: {
+            handle(item) {
+                if (item.name === this.$route.name) {
+                    return
+                }
+                this.$router.push(item.path)
+            },
+            home() {
+                this.$router.push('/')
+            },
+            goInsure() {
+                this.$router.push('/insure')
+            }
+        }
+    }
+</script>
+
+<style lang="less" scoped>
+.header {
+    height: 80px;
+    font-weight: bold;
+    background-color: #fff;
+
+    &.home {
+        background-color: #1B2532;
+        padding: 0 20px;
+
+        span {
+            color: #fff;
+        }
+
+        .pages-wrapper {
+            width: 100%;
+        }
+    }
+    .wallet-btn {
+        color: #1375d1;
+        font-weight: 700;
+    }
+    .wallet-btn:hover {
+        color: white;
+        background-color: #1375d1;
+        border: none;
+        font-weight: 700;
+    }
+
+    .header-wrapper {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logon-wrapper {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+            margin-right: 20px;
+        }
+    }
+
+    .right-list {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-item {
+            margin-left: 40px;
+            font-size: 16px;
+
+            a {
+                color: #fff;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .last-item {
+                display: block;
+                cursor: pointer;
+                width: 148px;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                background: url('../assets/images/button@2x.png') center center no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    .nav-list {
+        display: flex;
+
+        li {
+            font-size: 14px;
+            margin-left: 20px;
+
+            a {
+                color: #000;
+                text-decoration: none;
+
+                &.router-link-active {
+                    color: #00b984;
+                }
+            }
+        }
+    }
+}
+</style>

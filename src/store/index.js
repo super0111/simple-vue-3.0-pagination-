@@ -1,10 +1,34 @@
-import { createStore } from "vuex";
-import { auth } from "./auth.module";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-const store = createStore({
-  modules: {
-    auth,
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    index: 12,
+    protocolList: [
+      'lInch',
+      'Aave V1',
+    ]
   },
-});
-
-export default store;
+  getters: {
+    getIndex: (state) => state.index,
+    getProtocolList: (state) => state.protocolList,
+  },
+  mutations: {
+    increment(state) {
+      state.index ++;
+    },
+    setProtocolList (state) {
+      state.protocolList = []
+    }
+  },
+  actions: {
+    increment (context) {
+      context.commit('increment')
+    },
+    setProtocolList(context) {
+      context.commit('setProtocolList')
+    }
+  }
+})
